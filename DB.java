@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 public class DB {
 
-    String connectionString = "jdbc:sqlite:src\\main\\java\\Banka.db";
+    String connectionString = "jdbc:C:\\Users\\Vocnjak4\\Documents\\NetBeansProjects\\17b04\\src\\main.Banka.db";
 
     public void printFilijala() {
         try ( Connection conn = DriverManager.getConnection(connectionString);  Statement s = conn.createStatement()) {
@@ -42,7 +42,7 @@ public class DB {
         }}
    public void yad(int idFil,int idKom)
 {
-    try{Connection con=DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Vocnjak4\\Documents\\NetBeansProjects\\sam\\src\\sam\\Banka.db");
+    try{Connection con=DriverManager.getConnection("jdbc:sqlite:C:\\Users\\Vocnjak4\\Documents\\NetBeansProjects\\17b04\\src\\main\\Banka.db");
     PreparedStatement stm =con.prepareStatement("SELECT * FROM Racun R Komitent K WHERE Stanje<-R.DozvMinus AND R.IdFIl=? AND R.idKom=? ");
     PreparedStatement stm1 =con.prepareStatement("INSERT INTO Uplata(Iznos,IdRac,IdFil,Osnov) Values(?,?,?,"+"'Uplata na zahtev gradjanina'"+"+)");
     con.setAutoCommit(false);
